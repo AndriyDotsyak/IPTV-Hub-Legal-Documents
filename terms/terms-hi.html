@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light dark">
     <title>सेवा की शर्तें - IPTV Hub</title>
+
+    <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var theme = params.get('theme');
+
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('light');
+      }
+    })();
+    </script>
+    
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
