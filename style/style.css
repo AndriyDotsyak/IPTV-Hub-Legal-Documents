@@ -1,33 +1,62 @@
+/* ===== THEME VARIABLES ===== */
+
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --accent-color: #007bff;
-    --hr-color: #eeeeee;
+    --bg-color: #FFFFFF;
+    --text-color: #1F1F1F;
+    --accent-color: #0D77D3;
+    --hr-color: #EEEEEE;
+}
+
+html.light {
+    --bg-color: #FFFFFF;
+    --text-color: #1F1F1F;
+}
+
+html.dark {
+    --bg-color: #000000;
+    --text-color: #FFFFFF;
+    --hr-color: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --accent-color: #3391ff;
+    html:not(.light):not(.dark) {
+        --bg-color: #000000;
+        --text-color: #FFFFFF;
         --hr-color: #333333;
     }
+}
+
+/* ===== BASE ===== */
+
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+
     padding: 20px;
+
     max-width: 800px;
     margin: auto;
+
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+/* ===== TYPOGRAPHY ===== */
 
 h1, h2 {
     color: var(--accent-color);
     margin-top: 1.5em;
+}
+
+h1:first-child {
+    margin-top: 0;
 }
 
 .date {
@@ -35,6 +64,8 @@ h1, h2 {
     opacity: 0.7;
     font-size: 0.9em;
 }
+
+/* ===== ELEMENTS ===== */
 
 hr {
     border: 0;
